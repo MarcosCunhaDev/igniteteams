@@ -5,6 +5,8 @@ export function Groups() {
   return (
     <View style={styles.container}>
       <Text>Groups</Text>
+      <Text>React native test</Text>
+      <Text>testando Hot reload</Text>
     </View>
   );
 }
