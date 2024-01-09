@@ -1,12 +1,12 @@
+import { Loading } from "@components/Loading";
+import {
+  Roboto_400Regular,
+  Roboto_700Bold,
+  useFonts,
+} from "@expo-google-fonts/roboto";
 import { Groups } from "@screens/Groups";
 import { ThemeProvider } from "styled-components";
 import theme from "./src/theme";
-import {
-  useFonts,
-  Roboto_400Regular,
-  Roboto_700Bold,
-} from "@expo-google-fonts/roboto";
-import { ActivityIndicator } from "react-native";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -14,12 +14,9 @@ export default function App() {
     Roboto_700Bold,
   });
 
-  if (!fontsLoaded) {
-    return <ActivityIndicator />;
-  }
   return (
     <ThemeProvider theme={theme}>
-      <Groups />
+      {!fontsLoaded ? <Loading /> : <Groups />}
     </ThemeProvider>
   );
 }
