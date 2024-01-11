@@ -1,12 +1,12 @@
 import { Header } from "@components/Header";
-import { useTheme } from "styled-components/native";
 import * as S from "./styles";
+import { Highlight } from "@components/Highlight";
 
 export function Groups() {
-  const theme = useTheme();
   return (
     <S.Container>
       <Header version="primary" />
+      <Highlight title="Turmas" subtitle="jogue com a sua turma" />
     </S.Container>
   );
 }
