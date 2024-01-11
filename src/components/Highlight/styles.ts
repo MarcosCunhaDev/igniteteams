@@ -7,14 +7,14 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   text-align: center;
-  font-size: ${({ theme }) => theme.font_size.xl}px;
+  font-size: ${({ theme }) => theme.font_size.xl};
   font-family: ${({ theme }) => theme.font_family.bold};
   color: ${({ theme }) => theme.colors.white};
 `;
 
 export const Subtitle = styled.Text`
   text-align: center;
-  font-size: ${({ theme }) => theme.font_size.md}px;
+  font-size: ${({ theme }) => theme.font_size.md};
   font-family: ${({ theme }) => theme.font_family.regular};
   color: ${({ theme }) => theme.colors.gray_300};
 `;
