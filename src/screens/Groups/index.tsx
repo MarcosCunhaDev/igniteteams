@@ -1,18 +1,12 @@
-import { Text } from "react-native";
-import * as S from "./styles";
+import { Header } from "@components/Header";
 import { useTheme } from "styled-components/native";
+import * as S from "./styles";
 
 export function Groups() {
   const theme = useTheme();
   return (
     <S.Container>
-      <Text style={{ fontFamily: theme.font_family.regular }}>Groups</Text>
-      <Text style={{ fontFamily: theme.font_family.bold }}>
-        React native test
-      </Text>
-      <Text style={{ fontFamily: theme.font_family.regular }}>
-        testando Hot reload
-      </Text>
+      <Header version="primary" />
     </S.Container>
   );
 }
