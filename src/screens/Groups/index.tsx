@@ -1,16 +1,11 @@
 import { Header } from "@components/Header";
 import * as S from "./styles";
-import { Highlight } from "@components/Highlight";
-import { GroupCard } from "@components/GroupCard";
+import { Highlight, GroupCard, EmptyList } from "@components/index";
 import { useState } from "react";
 import { FlatList } from "react-native";
 
 export function Groups() {
-  const [groups, setGroups] = useState([
-    "Galera da Gringo",
-    "Amigos",
-    "Nintendistas",
-  ]);
+  const [groups, setGroups] = useState([]);
 
   return (
     <S.Container>
@@ -19,7 +14,11 @@ export function Groups() {
       <FlatList
         data={groups}
         keyExtractor={(item) => item}
+        contentContainerStyle={groups.length === 0 && { flex: 1 }}
         renderItem={({ item, index }) => <GroupCard title={item} />}
+        ListEmptyComponent={() => {
+          return <EmptyList message="Que tal cadastrar a primeira turma?" />;
+        }}
       />
     </S.Container>
   );
