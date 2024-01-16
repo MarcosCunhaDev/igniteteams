@@ -5,7 +5,7 @@ export const Container = styled.View<HeaderProps>`
   width: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: ${({ theme, version }) =>
+  justify-content: ${({ version }) =>
     version === "primary" ? "center" : "space-between"};
 `;
 
