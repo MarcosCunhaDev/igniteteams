@@ -1,5 +1,5 @@
 import { Header } from "@components/Header";
-import { Button, Highlight } from "@components/index";
+import { Button, Highlight, Input } from "@components/index";
 import { useState } from "react";
 import * as S from "./styles";
 
@@ -15,7 +15,8 @@ export function NewGroup() {
           title="Nova turma"
           subtitle="Crie a turma para adicionar as pessoas"
         />
-        <Button title="Criar" />
+        <Input placeholder="Nome da turma" />
+        <Button title="Criar" style={{ marginTop: 20 }} />
       </S.Content>
     </S.Container>
   );
