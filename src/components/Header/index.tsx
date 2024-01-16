@@ -12,7 +12,7 @@ export const Header = ({ version = "primary" }: HeaderProps) => {
   const theme = useTheme();
   return (
     <S.Container version={version}>
-      {version === "primary" ? (
+      {version === "secondary" ? (
         <TouchableWithoutFeedback
           onPress={() => {
             console.log("clicou aqiu");

@@ -8,6 +8,7 @@ import { Groups } from "@screens/Groups";
 import { ThemeProvider } from "styled-components";
 import theme from "./src/theme";
 import { StatusBar } from "react-native";
+import { NewGroup } from "@screens/NewGroup";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -22,7 +23,7 @@ export default function App() {
         backgroundColor={"transparent"}
         translucent
       />
-      {!fontsLoaded ? <Loading /> : <Groups />}
+      {!fontsLoaded ? <Loading /> : <NewGroup />}
     </ThemeProvider>
   );
 }
