@@ -1,6 +1,8 @@
 import { Header } from "@components/Header";
 import {
+  Button,
   ButtonIcon,
+  EmptyList,
   Filter,
   Highlight,
   Input,
@@ -14,6 +16,7 @@ const defaultItems = ["Time A", "Time B", "Time C", "Time D", "Time E"];
 
 export function Players() {
   const [groups, setGroups] = useState([]);
+  const [players, setPlayers] = useState([]);
   const [selectedItem, setSelectedItem] = useState(defaultItems[0]);
 
   return (
@@ -43,7 +46,12 @@ export function Players() {
         <NumberOfPlayers>{defaultItems.length}</NumberOfPlayers>
       </HeaderList>
       <FlatList
-        data={defaultItems}
+        contentContainerStyle={[
+          { paddingBottom: 30 },
+          players.length === 0 && { flex: 1 },
+        ]}
+        data={players}
+        showsVerticalScrollIndicator={false}
         key={(item) => item}
         renderItem={({ item }) => (
           <PlayerCard
@@ -53,7 +61,11 @@ export function Players() {
             name={item}
           />
         )}
+        ListEmptyComponent={() => {
+          return <EmptyList message="Não há pessoas nesse time." />;
+        }}
       />
+      <Button title="Remover Turma" type="Secondary" onPress={() => {}} />
     </Container>
   );
 }
