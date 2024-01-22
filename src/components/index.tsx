@@ -7,6 +7,8 @@ import { Header } from "./Header";
 import { Highlight } from "./Highlight";
 import { Input } from "./Input";
 import { Loading } from "./Loading";
+import { PlayerCard } from "./PlayerCard";
+
 
 export {
   EmptyList,
@@ -18,4 +20,5 @@ export {
   Input,
   ButtonIcon,
   Filter,
+  PlayerCard,
 };

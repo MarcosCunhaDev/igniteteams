@@ -1,5 +1,11 @@
 import { Header } from "@components/Header";
-import { ButtonIcon, Filter, Highlight, Input } from "@components/index";
+import {
+  ButtonIcon,
+  Filter,
+  Highlight,
+  Input,
+  PlayerCard,
+} from "@components/index";
 import { useState } from "react";
 import { FlatList } from "react-native";
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
@@ -36,6 +42,18 @@ export function Players() {
         />
         <NumberOfPlayers>{defaultItems.length}</NumberOfPlayers>
       </HeaderList>
+      <FlatList
+        data={defaultItems}
+        key={(item) => item}
+        renderItem={({ item }) => (
+          <PlayerCard
+            onCloseClick={() => {
+              console.log("Clicou no close");
+            }}
+            name={item}
+          />
+        )}
+      />
     </Container>
   );
 }
