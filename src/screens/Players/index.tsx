@@ -1,18 +1,22 @@
 import { Header } from "@components/Header";
-import { Button, Highlight, Input } from "@components/index";
+import { Button, ButtonIcon, Highlight, Input } from "@components/index";
 import { useState } from "react";
-import * as S from "./styles";
+import { Container, Form } from "./styles";
 
 export function Players() {
   const [groups, setGroups] = useState([]);
 
   return (
-    <S.Container>
+    <Container>
       <Header version="secondary" />
       <Highlight
         title="Nome da turma"
         subtitle="adicione a galera e separe os times"
       />
-    </S.Container>
+      <Form>
+        <Input placeholder="Nome do participante" autoCorrect={false} />
+        <ButtonIcon icon="add" type="primary" />
+      </Form>
+    </Container>
   );
 }

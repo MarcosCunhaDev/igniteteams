@@ -23,3 +23,11 @@ export const Icon = styled(UsersThree).attrs(({ theme }) => ({
 }))`
   align-self: center;
 `;
+
+export const Form = styled.View`
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.gray_700};
+  border-radius: 6px;
+  flex-direction: row;
+  justify-content: center;
+`;
