@@ -1,20 +1,15 @@
 import { UsersThree } from "phosphor-react-native";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.gray_600};
   padding: 24px;
-  /* justify-content: center;
-  align-items: center; */
 `;
 
 export const Content = styled.View`
   flex: 1;
   justify-content: center;
-  /* align-items: center; */
-  /* justify-content: center;
-  align-items: center; */
 `;
 
 export const Icon = styled(UsersThree).attrs(({ theme }) => ({
@@ -30,4 +25,21 @@ export const Form = styled.View`
   border-radius: 6px;
   flex-direction: row;
   justify-content: center;
+`;
+
+export const HeaderList = styled.View`
+  width: 100%;
+
+  flex-direction: row;
+  align-items: center;
+
+  margin: 32px 0px 12px;
+`;
+
+export const NumberOfPlayers = styled.Text`
+  ${({ theme }) => css`
+    font-family: ${theme.font_family.bold};
+    color: ${theme.colors.gray_200};
+    font-size: ${theme.font_size.sm};
+  `}
 `;
