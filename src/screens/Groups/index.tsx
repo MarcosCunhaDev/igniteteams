@@ -4,13 +4,15 @@ import { Highlight, GroupCard, EmptyList, Button } from "@components/index";
 import { useState } from "react";
 import { FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export function Groups() {
   const [groups, setGroups] = useState([]);
   const navigation = useNavigation();
+  const insets = useSafeAreaInsets();
 
   const handleNewGroup = () => {
-    navigation.navigate("players", { group: "dsds" });
+    navigation.navigate("new");
   };
 
   return (
