@@ -11,10 +11,17 @@ import {
 import { useState } from "react";
 import { FlatList } from "react-native";
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
+import { useRoute } from "@react-navigation/native";
 
 const defaultItems = ["Time A", "Time B", "Time C", "Time D", "Time E"];
 
+interface RouteParams {
+  group: string;
+}
+
 export function Players() {
+  const route = useRoute();
+  const { group } = route.params as RouteParams;
   const [groups, setGroups] = useState([]);
   const [players, setPlayers] = useState([]);
   const [selectedItem, setSelectedItem] = useState(defaultItems[0]);
@@ -22,10 +29,7 @@ export function Players() {
   return (
     <Container>
       <Header version="secondary" />
-      <Highlight
-        title="Nome da turma"
-        subtitle="adicione a galera e separe os times"
-      />
+      <Highlight title={group} subtitle="adicione a galera e separe os times" />
       <Form>
         <Input placeholder="Nome do participante" autoCorrect={false} />
         <ButtonIcon icon="add" type="primary" />
